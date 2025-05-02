@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Add Your Task</h1>
+    <input type="text" placeholder="Enter your task">
+    <button>Added</button>
+    <ul>
+
+    </ul>
+    <script>
+        let input=document.querySelector("input");
+        let button=document.querySelector("button");
+        button.addEventListener("click",function(event){
+            let val=event.target.previousElementSibling.value;
+            let li=document.createElement("li");
+            let btn=document.createElement("button");
+            let ul=document.querySelector("ul");
+            btn.innerText="Delete";
+            li.innerText=val;
+            li.append(btn);
+            ul.append(li);
+            event.target.previousElementSibling.value="";
+        });
+        let ul=document.querySelector("ul");
+        ul.addEventListener("click",function(event){
+            if(event.target.tagName==="BUTTON"){
+                let li=event.target.parentElement;
+                li.remove();
+            }
+        });
+    </script>
+</body>
+</html>
