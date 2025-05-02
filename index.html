@@ -17,6 +17,10 @@
         let button=document.querySelector("button");
         button.addEventListener("click",function(event){
             let val=event.target.previousElementSibling.value;
+            if(val===""){
+                alert("Please Enter a task");
+                return;
+            }
             let li=document.createElement("li");
             let btn=document.createElement("button");
             let ul=document.querySelector("ul");
